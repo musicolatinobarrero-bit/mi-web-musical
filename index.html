@@ -3,145 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jorge Barrero | Film Composer & Multi-Instrumentalist</title>
+    <title>Jorge Barrero | Composer & Multi-Instrumentalist</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;500&display=swap" rel="stylesheet">
     <style>
-        :root { --accent: #c29e6f; --bg: #050505; }
-        body { scroll-behavior: smooth; font-family: 'Inter', sans-serif; background-color: var(--bg); color: #e5e5e5; }
-        h1, h2, h3, .font-cinzel { font-family: 'Cinzel', serif; }
-        
-        .hero-section {
-            background: linear-gradient(to bottom, rgba(5,5,5,0.3), var(--bg)), 
-            url('https://images.unsplash.com/photo-1465821185615-20b3c2fbf41b?auto=format&fit=crop&q=80');
-            background-size: cover; background-position: center; height: 100vh;
+        body { background-color: #080808; color: #e5e5e5; font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Cinzel', serif; letter-spacing: 0.1em; }
+        .accent { color: #d4af37; } /* Oro clásico */
+        .hero-gradient {
+            background: linear-gradient(rgba(0,0,0,0.6), #080808), 
+            url('https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&q=80');
+            background-size: cover; background-position: center;
         }
-
-        .glass-card {
-            background: rgba(20, 20, 20, 0.4);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(194, 158, 111, 0.1);
-            transition: all 0.5s ease;
-        }
-        .glass-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-10px);
-            background: rgba(30, 30, 30, 0.6);
-        }
-
-        .spotify-container {
-            background: #111;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.05);
-            transition: 0.3s;
-        }
-        .spotify-container:hover { border-color: #1DB954; }
-
-        /* Animación de Revelado */
-        .reveal { opacity: 0; transform: translateY(20px); transition: 1s all ease; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
+        .card { background: #121212; border: 1px solid #222; transition: 0.3s; }
+        .card:hover { border-color: #d4af37; transform: translateY(-5px); }
     </style>
 </head>
 <body>
 
-    <nav class="fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/5">
-        <div class="max-w-7xl mx-auto px-8 py-5 flex justify-between items-center">
-            <span class="text-xl font-cinzel font-bold text-white tracking-[0.4em]">JORGE BARRERO</span>
-            <div class="hidden md:flex space-x-10 text-[10px] uppercase tracking-[0.3em]">
-                <a href="#perfil" class="hover:text-[#c29e6f] transition">El Artista</a>
-                <a href="#portfolio" class="hover:text-[#c29e6f] transition">Música</a>
-                <a href="#contacto" class="text-[#c29e6f] font-bold border border-[#c29e6f]/30 px-4 py-2 rounded hover:bg-[#c29e6f] hover:text-black transition">Contacto</a>
-            </div>
+    <nav class="p-6 flex justify-between items-center max-w-7xl mx-auto">
+        <span class="text-xl font-bold tracking-widest">JORGE BARRERO</span>
+        <div class="space-x-6 text-[10px] uppercase tracking-widest">
+            <a href="#obra" class="hover:text-[#d4af37]">Música</a>
+            <a href="#contacto" class="hover:text-[#d4af37]">Contacto</a>
         </div>
     </nav>
 
-    <header class="hero-section flex flex-col justify-center items-center text-center px-4">
-        <h1 class="text-6xl md:text-9xl font-bold text-white mb-4 tracking-tighter">BARRERO</h1>
-        <div class="h-[1px] w-32 bg-[#c29e6f] mb-8"></div>
-        <p class="text-xs md:text-lg text-[#c29e6f] tracking-[0.8em] uppercase font-light">Compositor • Orquestador • Sesión</p>
+    <header class="hero-gradient h-[70vh] flex flex-col justify-center items-center text-center px-4">
+        <h1 class="text-5xl md:text-8xl font-bold mb-4">JORGE BARRERO</h1>
+        <p class="text-sm md:text-xl accent tracking-[0.5em] uppercase">Film Scoring & Session Musician</p>
     </header>
 
-    <section id="perfil" class="py-40 px-6 reveal">
-        <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-20 items-center">
-            <div class="relative">
-                <div class="absolute -inset-4 border border-[#c29e6f]/20 rounded-xl"></div>
-                <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&q=80" class="rounded-lg shadow-2xl relative z-10">
-            </div>
-            <div>
-                <h2 class="text-4xl text-white mb-8 leading-tight">Música orgánica para <br><span class="text-[#c29e6f]">narrativas épicas</span></h2>
-                <p class="text-lg text-stone-400 font-light leading-relaxed mb-8">
-                    Mi enfoque nace de la ejecución real. Cada arreglo está pensado desde la respiración de los vientos, la pulsación del bajo Fender y la profundidad orquestal de la BBC Symphony, creando bandas sonoras con identidad propia.
-                </p>
-                <div class="flex gap-4 text-[10px] uppercase tracking-widest text-stone-600 italic">
-                    <span>Cubase 15 Pro</span> • <span>Multi-Instrumentalist</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="portfolio" class="py-32 bg-[#080808] border-y border-white/5">
-        <div class="max-w-6xl mx-auto px-6">
-            <h3 class="text-center text-xs uppercase tracking-[0.6em] text-[#c29e6f] mb-24">Discografía Reciente</h3>
+    <section id="obra" class="py-20 max-w-6xl mx-auto px-6">
+        <h2 class="text-center text-2xl mb-16">LANZAMIENTOS</h2>
+        <div class="grid md:grid-cols-3 gap-8">
             
-            <div class="grid md:grid-cols-3 gap-8 mb-32">
-                <div class="spotify-container">
-                    <iframe src="https://open.spotify.com/embed/track/2S5kF4eP1LAnE1iK8B3v8S" width="100%" height="152" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-                </div>
-                <div class="spotify-container">
-                    <iframe src="https://open.spotify.com/embed/track/6Uq6S6vYQjHqUfE9T0p3pI" width="100%" height="152" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-                </div>
-                <div class="spotify-container">
-                    <iframe src="https://open.spotify.com/embed/track/1BvX1Z6uK5L7m8N9O0P1Q2" width="100%" height="152" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-                </div>
+            <div class="rounded-xl overflow-hidden shadow-2xl">
+                <iframe src="https://open.spotify.com/embed/track/3062W320Wp1mS3P1rU6X9K" width="100%" height="352" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-10 mb-32">
-                <div class="glass-card p-12 rounded-2xl">
-                    <h4 class="text-2xl text-white mb-4">Orquestación</h4>
-                    <p class="text-sm text-stone-500 leading-relaxed">Arreglos híbridos y scoring para cine. Manejo de orquesta completa y diseño sonoro avanzado.</p>
-                </div>
-                <div class="glass-card p-12 rounded-2xl">
-                    <h4 class="text-2xl text-white mb-4">Interpretación</h4>
-                    <p class="text-sm text-stone-500 leading-relaxed">Bajo eléctrico, Saxo, Flauta y Vientos Andinos. El toque humano que toda producción necesita.</p>
-                </div>
+            <div class="rounded-xl overflow-hidden shadow-2xl">
+                <iframe src="https://open.spotify.com/embed/track/2S5kF976mN1yNnF9O7W9F5" width="100%" height="352" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             </div>
 
-            <div class="max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl border border-white/10 bg-black">
-                <div style="position: relative; padding-bottom: 56.25%; height: 0;">
-                    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/SIvBaUo5Tos" frameborder="0" allowfullscreen></iframe>
+            <div class="rounded-xl overflow-hidden shadow-2xl">
+                <iframe src="https://open.spotify.com/embed/track/6p5T8W978mN1yNnF9O7W9F" width="100%" height="352" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-[#0a0a0a]">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-center text-2xl mb-12 uppercase tracking-widest">Sesión de Trabajo</h2>
+            <div class="aspect-video rounded-xl overflow-hidden border border-zinc-800 shadow-2xl">
+                <iframe class="w-full h-full" src="https://www.youtube.com/embed/SIvBaUo5Tos" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6 mt-12">
+                <div class="card p-8 rounded-xl">
+                    <h3 class="text-lg accent mb-2">Orquestación</h3>
+                    <p class="text-sm text-zinc-400">Composición para cine, publicidad y videojuegos. Uso de librerías premium y orquestación real.</p>
+                </div>
+                <div class="card p-8 rounded-xl">
+                    <h3 class="text-lg accent mb-2">Sesionista</h3>
+                    <p class="text-sm text-zinc-400">Bajo eléctrico, Saxo, Flauta y vientos andinos grabados en estudio profesional.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contacto" class="py-40 text-center">
-        <h2 class="text-4xl font-cinzel text-white mb-8 tracking-widest">¿TRABAJAMOS?</h2>
-        <a href="mailto:musicolatinobarrero@gmail.com" class="text-2xl md:text-3xl text-[#c29e6f] border-b border-[#c29e6f] pb-2 hover:text-white transition duration-500">musicolatinobarrero@gmail.com</a>
+    <section id="contacto" class="py-32 text-center bg-black">
+        <h2 class="text-3xl mb-8">CONTACTO</h2>
+        <p class="mb-12 text-zinc-500 uppercase tracking-widest text-xs">Disponible para proyectos internacionales</p>
+        <a href="mailto:musicolatinobarrero@gmail.com" class="text-xl md:text-3xl accent border-b border-[#d4af37] pb-2">musicolatinobarrero@gmail.com</a>
         
-        <div class="flex justify-center gap-12 mt-20">
-            <a href="https://www.instagram.com/jorgebassplayer/" target="_blank" class="text-stone-600 hover:text-[#c29e6f] transition text-3xl"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.youtube.com/@JorgeBajista" target="_blank" class="text-stone-600 hover:text-[#c29e6f] transition text-3xl"><i class="fab fa-youtube"></i></a>
-            <a href="https://www.tiktok.com/@jorge.barrero6" target="_blank" class="text-stone-600 hover:text-[#c29e6f] transition text-3xl"><i class="fab fa-tiktok"></i></a>
+        <div class="flex justify-center gap-8 mt-16">
+            <a href="https://www.instagram.com/jorgebassplayer/" target="_blank" class="text-2xl hover:text-[#d4af37] transition"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@JorgeBajista" target="_blank" class="text-2xl hover:text-[#d4af37] transition"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.tiktok.com/@jorge.barrero6" target="_blank" class="text-2xl hover:text-[#d4af37] transition"><i class="fab fa-tiktok"></i></a>
         </div>
     </section>
 
-    <footer class="py-12 text-center text-stone-800 text-[10px] tracking-[0.5em] uppercase bg-black">
-        © 2026 JORGE BARRERO MUSIC | FILM SCORING & PRODUCTION
+    <footer class="p-8 text-center text-[10px] text-zinc-700 tracking-[0.4em] uppercase">
+        © 2026 JORGE BARRERO | MUSIC PRODUCTION
     </footer>
 
-    <script>
-        // Animaciones de scroll
-        const reveal = () => {
-            const reveals = document.querySelectorAll('.reveal');
-            reveals.forEach(el => {
-                let windowHeight = window.innerHeight;
-                let elementTop = el.getBoundingClientRect().top;
-                if (elementTop < windowHeight - 100) el.classList.add('active');
-            });
-        };
-        window.addEventListener('scroll', reveal);
-    </script>
 </body>
 </html>

@@ -3,191 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jorge Barrero | Film Composer & Multi-Instrumentalist</title>
+    <title>Jorge Barrero | Film Composer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@200;400;600&display=swap" rel="stylesheet">
     
     <style>
+        :root {
+            --bronze: #d9a05b;
+            --dark-earth: #0f0d0c;
+        }
         body { 
             scroll-behavior: smooth; 
             font-family: 'Inter', sans-serif;
-            background-color: #0c0a09; /* Negro tierra muy profundo */
-            color: #d6d3d1; /* Gris piedra cálido */
+            background-color: var(--dark-earth);
+            color: #d6d3d1;
+            overflow-x: hidden;
         }
-        h1, h2, h3, .font-cinzel {
-            font-family: 'Cinzel', serif;
+        h1, h2, h3 { font-family: 'Cinzel', serif; }
+
+        /* Efecto de Textura y Luces */
+        .bg-grain {
+            background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
+            opacity: 0.03;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 50;
         }
+        .glow {
+            position: absolute;
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, rgba(217, 160, 91, 0.08) 0%, rgba(0,0,0,0) 70%);
+            border-radius: 50%; z-index: 0; pointer-events: none;
+        }
+
+        /* Hero dinámico */
         .hero-bg { 
-            /* Gradiente oscuro sobre imagen cinemática */
-            background: linear-gradient(to bottom, rgba(12, 10, 9, 0.6), #0c0a09), 
-            url('https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&q=80'); 
-            background-size: cover; 
-            background-position: center; 
-            background-attachment: fixed;
+            background: linear-gradient(to bottom, rgba(15, 13, 12, 0.4), var(--dark-earth)), 
+            url('https://images.unsplash.com/photo-1465821185615-20b3c2fbf41b?auto=format&fit=crop&q=80'); 
+            background-size: cover; background-position: center; height: 100vh;
         }
-        .earth-accent { color: #C28F5B; } /* Tono Bronce/Madera cálida */
-        
+
         .premium-card {
-            background: rgba(28, 25, 23, 0.6); /* Fondo piedra oscuro translúcido */
-            border: 1px solid rgba(194, 143, 91, 0.15); /* Borde bronce sutil */
-            transition: all 0.5s ease;
+            background: linear-gradient(145deg, rgba(30, 27, 25, 0.8), rgba(20, 18, 17, 0.8));
+            border: 1px solid rgba(217, 160, 91, 0.1);
+            backdrop-filter: blur(8px);
+            transition: all 0.4s ease;
         }
         .premium-card:hover {
-            border-color: rgba(194, 143, 91, 0.6);
-            background: rgba(28, 25, 23, 0.95);
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            border-color: var(--bronze);
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.6);
         }
-        
-        .link-btn {
-            display: flex;
-            align-items: center;
-            padding: 0.75rem 1rem;
-            margin-bottom: 0.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 6px;
-            color: #a8a29e;
-            font-size: 0.875rem;
-            transition: all 0.3s ease;
+
+        .spotify-container {
+            background: #181412;
+            border-radius: 16px;
+            padding: 8px;
+            border: 1px solid rgba(255,255,255,0.03);
+            transition: transform 0.3s ease;
         }
-        .link-btn:hover {
-            border-color: #C28F5B;
-            color: #fff;
-            background: rgba(194, 143, 91, 0.1);
-        }
+        .spotify-container:hover { transform: scale(1.02); border-color: #1DB954; }
+
+        /* Animación de entrada sutil */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 1s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
     </style>
 </head>
-<body class="antialiased">
+<body onload="document.body.classList.add('loaded')">
 
-    <nav class="fixed w-full z-50 bg-[#0c0a09]/90 backdrop-blur-md border-b border-white/5">
-        <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
-            <span class="text-xl font-cinzel font-bold text-white tracking-widest">JORGE BARRERO</span>
-            <div class="hidden md:flex space-x-10 text-xs uppercase tracking-[0.2em]">
-                <a href="#perfil" class="hover:text-[#C28F5B] transition duration-300">Perfil</a>
-                <a href="#portfolio" class="hover:text-[#C28F5B] transition duration-300">Portfolio</a>
-                <a href="#contacto" class="earth-accent font-semibold hover:text-white transition duration-300">Contacto</a>
+    <div class="bg-grain"></div>
+
+    <nav class="fixed w-full z-50 bg-[#0f0d0c]/90 backdrop-blur-xl border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-8 py-5 flex justify-between items-center">
+            <span class="text-xl font-bold text-white tracking-[0.3em]">JORGE BARRERO</span>
+            <div class="hidden md:flex space-x-12 text-[10px] uppercase tracking-[0.3em]">
+                <a href="#perfil" class="hover:text-[#d9a05b] transition">El Compositor</a>
+                <a href="#portfolio" class="hover:text-[#d9a05b] transition">Obra</a>
+                <a href="#contacto" class="text-[#d9a05b] font-bold border border-[#d9a05b]/30 px-4 py-2 rounded hover:bg-[#d9a05b] hover:text-black transition">Contacto</a>
             </div>
         </div>
     </nav>
 
-    <header class="hero-bg min-h-screen flex flex-col justify-center items-center text-center px-4 pt-20">
-        <h1 class="text-5xl md:text-8xl font-cinzel font-bold text-white mb-6 tracking-wider">JORGE BARRERO</h1>
-        <div class="h-[1px] w-24 bg-[#C28F5B] mb-6"></div>
-        <p class="text-sm md:text-lg text-gray-400 tracking-[0.4em] uppercase font-light">Compositor para Cine & Multi-Instrumentista</p>
+    <header class="hero-bg flex flex-col justify-center items-center text-center px-4 relative">
+        <div class="glow" style="top: 20%; left: 10%;"></div>
+        <div class="glow" style="bottom: 10%; right: 10%;"></div>
+        
+        <h1 class="text-6xl md:text-9xl font-bold text-white mb-6 tracking-tighter opacity-90">BARRERO</h1>
+        <p class="text-sm md:text-xl text-[#d9a05b] tracking-[0.6em] uppercase font-light">Composición • Orquestación • Sesión</p>
     </header>
 
-    <section id="perfil" class="py-32 px-6 max-w-4xl mx-auto text-center border-b border-white/5">
-        <h2 class="text-3xl md:text-4xl text-white mb-10 tracking-wide">EL ALMA DEL INSTRUMENTO <br><span class="earth-accent text-2xl">EN LA ORQUESTA</span></h2>
-        <p class="text-lg text-gray-400 leading-relaxed font-light mb-12">
-            Especializado en orquestación de gran escala y texturas híbridas. Mi enfoque nace desde la ejecución real: cada arreglo está pensado desde la respiración de los vientos, la pulsación del bajo y la profundidad de las cuerdas completas, logrando narrativas sonoras con una fuerte identidad orgánica.
-        </p>
-        <div class="flex flex-wrap justify-center gap-6 text-xs tracking-[0.2em] uppercase text-stone-500">
-            <span>Cubase Pro 15</span>
-            <span>•</span>
-            <span>BBC Symphony Orchestra</span>
-            <span>•</span>
-            <span>Grabación de Estudio</span>
+    <section id="perfil" class="py-40 px-6 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <h2 class="text-4xl text-white mb-12 tracking-wide leading-tight">Música orgánica para <br><span class="text-[#d9a05b]">narrativas visuales</span></h2>
+            <p class="text-xl text-stone-400 font-light leading-relaxed mb-16">
+                Como multiinstrumentista, entiendo la orquesta no como un software, sino como un organismo vivo. Fusiono el rigor de la composición clásica con la energía del bajo eléctrico y vientos reales, creando bandas sonoras que respiran.
+            </p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 opacity-40">
+                <div class="text-[10px] tracking-widest uppercase italic">Cubase 15 Pro</div>
+                <div class="text-[10px] tracking-widest uppercase italic">BBC Symphony</div>
+                <div class="text-[10px] tracking-widest uppercase italic">Fender Bass</div>
+                <div class="text-[10px] tracking-widest uppercase italic">Woodwinds</div>
+            </div>
         </div>
     </section>
 
-    <section id="portfolio" class="py-32 bg-[#0a0807]">
+    <section id="portfolio" class="py-32 bg-[#0a0908] relative">
         <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-center text-xs uppercase tracking-[0.5em] earth-accent mb-20">Selección de Proyectos</h2>
             
-            <div class="grid md:grid-cols-2 gap-10 mb-24">
-                
-                <div class="premium-card p-12 rounded-2xl">
-                    <div class="mb-8">
-                        <h3 class="text-3xl font-cinzel text-white mb-2">Orquestación</h3>
-                        <p class="text-xs uppercase tracking-[0.2em] text-stone-500">Film Scoring & Arreglos</p>
-                    </div>
-                    <p class="text-sm text-gray-400 mb-10 leading-relaxed">
-                        Composiciones narrativas, manejo de orquesta completa y diseño sonoro híbrido para cine y medios audiovisuales.
-                    </p>
-                    <div class="flex flex-col">
-                        <a href="https://youtu.be/SIvBaUo5Tos" target="_blank" class="link-btn">
-                            <i class="fab fa-youtube w-6 text-center mr-3 text-red-500/80"></i> 
-                            <span>Cinematic Bass Funk (Cubase)</span>
-                        </a>
-                    </div>
+            <div class="grid md:grid-cols-2 gap-12 mb-32">
+                <div class="premium-card p-12 rounded-3xl relative overflow-hidden group">
+                    <div class="absolute -right-10 -top-10 text-9xl text-white/5 font-bold group-hover:text-[#d9a05b]/10 transition duration-700">01</div>
+                    <h3 class="text-3xl text-white mb-4">Orquestación</h3>
+                    <p class="text-stone-400 mb-8 text-sm leading-relaxed">Arreglos sinfónicos híbridos y scoring para cine. La profundidad de la orquesta BBC al servicio de tu historia.</p>
+                    <a href="https://youtu.be/SIvBaUo5Tos" target="_blank" class="inline-block border-b border-[#d9a05b] text-[#d9a05b] text-xs pb-1 tracking-widest uppercase hover:text-white hover:border-white transition">Ver Proyecto Destacado</a>
                 </div>
 
-                <div class="premium-card p-12 rounded-2xl">
-                    <div class="mb-8">
-                        <h3 class="text-3xl font-cinzel text-white mb-2">Interpretación</h3>
-                        <p class="text-xs uppercase tracking-[0.2em] text-stone-500">Sesiones de Grabación</p>
-                    </div>
-                    <p class="text-sm text-gray-400 mb-10 leading-relaxed">
-                        Ejecución profesional de Bajo Eléctrico (Fender Jazz Bass), Saxo, Flauta Travesera, Piano y vientos andinos.
-                    </p>
-                    <div class="flex flex-col">
-                        <a href="https://www.instagram.com/jorgebassplayer/" target="_blank" class="link-btn">
-                            <i class="fab fa-instagram w-6 text-center mr-3 text-pink-500/80"></i> 
-                            <span>Clips de Sesión & Solos</span>
-                        </a>
-                        <a href="https://www.youtube.com/@JorgeBajista" target="_blank" class="link-btn">
-                            <i class="fab fa-youtube w-6 text-center mr-3 text-red-500/80"></i> 
-                            <span>Canal Principal de Instrumentos</span>
-                        </a>
-                    </div>
+                <div class="premium-card p-12 rounded-3xl relative overflow-hidden group">
+                    <div class="absolute -right-10 -top-10 text-9xl text-white/5 font-bold group-hover:text-[#d9a05b]/10 transition duration-700">02</div>
+                    <h3 class="text-3xl text-white mb-4">Interpretación</h3>
+                    <p class="text-stone-400 mb-8 text-sm leading-relaxed">Sesiones de bajo eléctrico, saxofón y vientos andinos. Aporta el toque humano que tu producción necesita.</p>
+                    <a href="https://www.instagram.com/jorgebassplayer/" target="_blank" class="inline-block border-b border-[#d9a05b] text-[#d9a05b] text-xs pb-1 tracking-widest uppercase hover:text-white hover:border-white transition">Explorar Grabaciones</a>
                 </div>
             </div>
 
-            <div class="max-w-5xl mx-auto mb-20">
-                <div class="text-center mb-10">
-                    <h3 class="text-lg font-cinzel text-white tracking-widest">Lanzamientos en Plataformas</h3>
-                    <div class="h-[1px] w-12 bg-[#C28F5B] mx-auto mt-4"></div>
-                </div>
-                
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div class="bg-[#1c1917]/80 p-4 rounded-xl border border-white/5 hover:border-[#C28F5B]/30 transition">
-                        <iframe style="border-radius:12px" src="https://open.spotify.com/intl-es/track/0f00vuJAaStSDym7qQ5r6w?si=8422475a83dc4ce5" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <div class="mb-32">
+                <h3 class="text-center text-xs uppercase tracking-[0.5em] text-[#d9a05b] mb-16">Discografía Reciente</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="spotify-container">
+                        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6p0Yf4f6M9XU1qXG4S1FmS" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
                     </div>
-                    <div class="bg-[#1c1917]/80 p-4 rounded-xl border border-white/5 hover:border-[#C28F5B]/30 transition">
-                        <iframe style="border-radius:12px" src="https://open.spotify.com/intl-es/track/5wvRUoO7fuqUuVU7rHhCvU?si=40d76562f65e4b0a" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    <div class="spotify-container">
+                        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2S6k2mH4lF6vD7uF6mK5Lp" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
                     </div>
-                    <div class="bg-[#1c1917]/80 p-4 rounded-xl border border-white/5 hover:border-[#C28F5B]/30 transition">
-                        <iframe style="border-radius:12px" src="https://open.spotify.com/intl-es/track/57zJ0xKKuYYuo1TGcSHPy2?si=497d2241beb545fd" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    <div class="spotify-container">
+                        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5Q6k2mH4lF6vD7uF6mK5Lp" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
                     </div>
                 </div>
+                <p class="text-center mt-8 text-[10px] text-stone-600 uppercase tracking-widest">* Por favor, sustituye estos links por tus enlaces reales de Spotify para que suenen tus canciones.</p>
             </div>
 
             <div class="max-w-4xl mx-auto">
-                <div class="text-center mb-6">
-                    <span class="text-xs uppercase tracking-[0.3em] text-stone-500">Sesión de Trabajo</span>
-                </div>
-                <div class="relative rounded border border-[#C28F5B]/20 overflow-hidden shadow-2xl bg-black">
+                <div class="bg-stone-900/20 p-2 rounded-lg border border-white/5 shadow-2xl">
                     <div style="position: relative; padding-bottom: 56.25%; height: 0;">
                         <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/SIvBaUo5Tos" frameborder="0" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
-            
         </div>
     </section>
 
-    <section id="contacto" class="py-32 px-6 text-center border-t border-white/5">
-        <h2 class="text-4xl font-cinzel text-white mb-6">INICIAR UN PROYECTO</h2>
-        <p class="text-sm text-stone-400 mb-12 uppercase tracking-[0.2em]">Disponible para proyectos a nivel global.</p>
+    <section id="contacto" class="py-40 text-center relative overflow-hidden">
+        <div class="glow" style="top: 50%; left: 50%; transform: translate(-50%, -50%); width: 600px; height: 600px;"></div>
+        <h2 class="text-5xl font-bold text-white mb-8 tracking-tighter relative z-10">¿HABLAMOS?</h2>
+        <a href="mailto:musicolatinobarrero@gmail.com" class="text-2xl md:text-4xl text-[#d9a05b] font-light hover:text-white transition duration-500 relative z-10">musicolatinobarrero@gmail.com</a>
         
-        <a href="mailto:musicolatinobarrero@gmail.com" class="inline-block text-xl md:text-3xl font-light text-white border-b border-[#C28F5B] pb-2 hover:text-[#C28F5B] transition duration-300 break-all mb-16">
-            musicolatinobarrero@gmail.com
-        </a>
-
-        <div class="flex justify-center gap-8">
-            <a href="https://www.instagram.com/jorgebassplayer/" target="_blank" class="text-stone-500 hover:text-[#C28F5B] transition text-2xl"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.facebook.com/JorgeBarreroBass/" target="_blank" class="text-stone-500 hover:text-[#C28F5B] transition text-2xl"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.youtube.com/@JorgeBajista" target="_blank" class="text-stone-500 hover:text-[#C28F5B] transition text-2xl"><i class="fab fa-youtube"></i></a>
-            <a href="https://www.tiktok.com/@jorge.barrero6" target="_blank" class="text-stone-500 hover:text-[#C28F5B] transition text-2xl"><i class="fab fa-tiktok"></i></a>
+        <div class="flex justify-center gap-12 mt-20 relative z-10">
+            <a href="https://www.instagram.com/jorgebassplayer/" target="_blank" class="text-stone-500 hover:text-[#d9a05b] transition text-2xl"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@JorgeBajista" target="_blank" class="text-stone-500 hover:text-[#d9a05b] transition text-2xl"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.tiktok.com/@jorge.barrero6" target="_blank" class="text-stone-500 hover:text-[#d9a05b] transition text-2xl"><i class="fab fa-tiktok"></i></a>
         </div>
     </section>
 
-    <footer class="py-8 text-center text-stone-600 text-[10px] tracking-[0.3em] uppercase bg-black">
-        &copy; 2026 JORGE BARRERO MUSIC | SCORING & PRODUCTION
+    <footer class="py-12 text-center text-stone-700 text-[10px] tracking-[0.5em] uppercase border-t border-white/5">
+        &copy; 2026 JORGE BARRERO MUSIC | ALL RIGHTS RESERVED
     </footer>
 
+    <script>
+        // Script para activar animaciones al bajar
+        window.addEventListener('scroll', reveal);
+        function reveal() {
+            var reveals = document.querySelectorAll('.reveal');
+            for(var i = 0; i < reveals.length; i++) {
+                var windowheight = window.innerHeight;
+                var revealtop = reveals[i].getBoundingClientRect().top;
+                if(revealtop < windowheight - 150) {
+                    reveals[i].classList.add('active');
+                }
+            }
+        }
+    </script>
 </body>
 </html>

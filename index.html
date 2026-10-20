@@ -29,26 +29,34 @@
 </head>
 <body class="bg-zinc-950 text-gray-200 font-light">
 
+    <!-- NAVEGACIÓN -->
     <nav class="fixed w-full z-50 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <span class="text-xl font-bold tracking-tighter text-white">JORGE BARRERO</span>
-            <div class="hidden md:flex space-x-8 text-sm uppercase tracking-widest">
+            <div class="hidden lg:flex space-x-6 text-sm uppercase tracking-widest items-center">
                 <a href="#perfil" class="hover:text-amber-500 transition">Perfil</a>
-                <a href="#portfolio" class="hover:text-amber-500 transition">Portfolio</a>
-                <a href="#instrumentos" class="hover:text-amber-500 transition">Instrumentos</a>
-                <a href="#contacto" class="bg-amber-600 px-4 py-2 text-black font-bold rounded hover:bg-amber-500 transition">Contacto</a>
+                <a href="#musica-videos" class="hover:text-amber-500 transition">Música para Videos</a>
+                <a href="#grabaciones" class="hover:text-amber-500 transition">Grabaciones</a>
+                <a href="#clases" class="hover:text-amber-500 transition">Clases Online</a>
+                <a href="#contacto" class="bg-amber-600 px-4 py-2 text-black font-bold rounded hover:bg-amber-500 transition ml-4">Contacto</a>
+            </div>
+            <!-- Menú móvil (icono simple) -->
+            <div class="lg:hidden text-2xl text-amber-500">
+                <i class="fas fa-bars"></i>
             </div>
         </div>
     </nav>
 
+    <!-- HEADER / HERO -->
     <header class="hero-gradient min-h-screen flex flex-col justify-center items-center text-center px-4">
         <h1 class="text-6xl md:text-9xl font-black text-white mb-4 tracking-tighter">JORGE BARRERO</h1>
         <p class="text-lg md:text-2xl text-amber-500 tracking-[0.4em] uppercase font-medium">Film Scoring • Orquestación • Sesión</p>
         <div class="mt-12 animate-bounce">
-            <a href="#perfil"><i class="fas fa-chevron-down text-2xl text-zinc-600"></i></a>
+            <a href="#perfil"><i class="fas fa-chevron-down text-2xl text-zinc-600 hover:text-amber-500 transition"></i></a>
         </div>
     </header>
 
+    <!-- 0. PERFIL -->
     <section id="perfil" class="py-32 px-6 max-w-5xl mx-auto">
         <div class="grid md:grid-cols-2 gap-16 items-center">
             <div>
@@ -56,7 +64,7 @@
                 <p class="text-lg text-gray-400 leading-relaxed mb-6">
                     Compositor y multiinstrumentista especializado en fusionar la majestuosidad de la orquesta sinfónica con texturas modernas y ejecución real. Mi enfoque nace desde el corazón del instrumento, logrando arreglos con alma y profundidad cinematográfica.
                 </p>
-                <div class="flex gap-4">
+                <div class="flex flex-wrap gap-4">
                     <span class="bg-zinc-800 px-3 py-1 rounded text-xs text-zinc-400 border border-zinc-700 uppercase">Cubase Pro 15</span>
                     <span class="bg-zinc-800 px-3 py-1 rounded text-xs text-zinc-400 border border-zinc-700 uppercase">BBCSO Pro</span>
                 </div>
@@ -67,68 +75,97 @@
         </div>
     </section>
 
-    <section id="portfolio" class="py-24 bg-zinc-900/30">
+    <!-- 1. MÚSICA PARA VIDEOS Y CINE -->
+    <section id="musica-videos" class="py-24 bg-zinc-900/30">
         <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-center text-sm uppercase tracking-[0.5em] text-amber-500 mb-16">Explora mi trabajo</h2>
+            <h2 class="text-center text-sm uppercase tracking-[0.5em] text-amber-500 mb-4">Portfolio</h2>
+            <h3 class="text-4xl font-bold mb-16 text-center text-white tracking-tighter">MÚSICA PARA VIDEOS & CINE</h3>
             
+            <p class="text-center text-gray-400 max-w-2xl mx-auto mb-12">Composiciones orquestales de gran escala, arreglos para cine, publicidad y clips audiovisuales.</p>
+
             <div class="grid md:grid-cols-2 gap-8">
-                <a href="https://youtu.be/SIvBaUo5Tos" target="_blank" class="card-glass p-10 rounded-3xl group">
-                    <div class="flex justify-between items-start mb-6">
-                        <i class="fas fa-scroll text-4xl text-amber-500"></i>
-                        <i class="fas fa-external-link-alt text-zinc-600 group-hover:text-amber-500 transition"></i>
+                <!-- Columna YouTube -->
+                <div class="card-glass p-8 rounded-3xl">
+                    <div class="flex items-center mb-6">
+                        <i class="fab fa-youtube text-3xl text-red-500 mr-4"></i>
+                        <h3 class="text-2xl font-bold text-white">YouTube</h3>
                     </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">Orquestación & Scoring</h3>
-                    <p class="text-gray-400 mb-6">Composiciones orquestales de gran escala, arreglos para cine y publicidad utilizando librerías de estándar industrial como BBCSO Pro.</p>
-                    <span class="text-amber-500 font-bold uppercase text-xs tracking-widest">Ver Reel Orquestal →</span>
-                </a>
-
-                <a href="https://www.instagram.com/jorgebassplayer/" target="_blank" class="card-glass p-10 rounded-3xl group">
-                    <div class="flex justify-between items-start mb-6">
-                        <i class="fas fa-guitar text-4xl text-amber-500"></i>
-                        <i class="fas fa-external-link-alt text-zinc-600 group-hover:text-amber-500 transition"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">Instrumentos & Sesión</h3>
-                    <p class="text-gray-400 mb-6">Grabación profesional de bajo eléctrico (Fender Jazz Bass), vientos y cuerdas para productores y artistas globales.</p>
-                    <span class="text-amber-500 font-bold uppercase text-xs tracking-widest">Ver Clips de Sesión →</span>
-                </a>
-            </div>
-
-            <div class="mt-20 max-w-4xl mx-auto">
-                <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-zinc-800">
-                    <div style="position: relative; padding-bottom: 56.25%; height: 0;">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-zinc-800 mb-4" style="padding-bottom: 56.25%; height: 0;">
                         <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/SIvBaUo5Tos" frameborder="0" allowfullscreen></iframe>
                     </div>
+                    <p class="text-zinc-500 text-sm tracking-widest uppercase">Destacado: Cinematic Bass Funk (Cubase 15)</p>
+                    <a href="https://www.youtube.com/@JorgeBajista" target="_blank" class="mt-6 inline-block text-amber-500 font-bold uppercase text-xs tracking-widest hover:text-white transition">Ver canal completo →</a>
                 </div>
-                <p class="text-center mt-6 text-zinc-500 text-sm tracking-widest uppercase">Destacado: Cinematic Bass Funk (Cubase 15 Project)</p>
+
+                <!-- Columna Spotify -->
+                <div class="card-glass p-8 rounded-3xl">
+                    <div class="flex items-center mb-6">
+                        <i class="fab fa-spotify text-3xl text-green-500 mr-4"></i>
+                        <h3 class="text-2xl font-bold text-white">Spotify</h3>
+                    </div>
+                    <!-- REEMPLAZA EL SRC DE ESTE IFRAME CON EL TUYO DE SPOTIFY -->
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX10zKzsJ2jva?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    <p class="mt-4 text-zinc-500 text-sm tracking-widest uppercase">Escucha mis últimos lanzamientos</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="instrumentos" class="py-32">
+    <!-- 2. GRABACIONES (Sesión e Instrumentos) -->
+    <section id="grabaciones" class="py-24 border-y border-zinc-800/50">
         <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-16 text-center text-white tracking-tighter">EL ARSENAL</h2>
+            <h2 class="text-center text-sm uppercase tracking-[0.5em] text-amber-500 mb-4">Estudio & Sesión</h2>
+            <h3 class="text-4xl font-bold mb-16 text-center text-white tracking-tighter">GRABACIONES</h3>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+                <div>
+                    <h4 class="text-2xl font-bold text-white mb-4"><i class="fas fa-microphone-alt text-amber-500 mr-3"></i>Músico de Sesión</h4>
+                    <p class="text-gray-400 mb-6 leading-relaxed">Grabación profesional de bajo eléctrico (Fender Jazz Bass), vientos y cuerdas para productores y artistas globales. Entrego pistas editadas y listas para mezclar, aportando el <i>groove</i> y la intención exacta que tu tema necesita.</p>
+                    <a href="https://www.instagram.com/jorgebassplayer/" target="_blank" class="bg-zinc-800 text-white px-6 py-3 rounded-full text-sm font-bold uppercase tracking-widest hover:bg-amber-600 transition inline-flex items-center">
+                        <i class="fab fa-instagram mr-2 text-lg"></i> Ver clips de grabación
+                    </a>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <!-- Puedes poner fotos tuyas grabando aquí o dejar estos bloques estilizados -->
+                    <div class="bg-zinc-900 aspect-square rounded-2xl border border-zinc-800 flex items-center justify-center p-6 text-center hover:border-amber-500/50 transition">
+                        <div>
+                            <i class="fas fa-wave-square text-3xl text-zinc-600 mb-2"></i>
+                            <p class="text-xs text-zinc-400 uppercase tracking-widest">Audio HQ</p>
+                        </div>
+                    </div>
+                    <div class="bg-zinc-900 aspect-square rounded-2xl border border-zinc-800 flex items-center justify-center p-6 text-center hover:border-amber-500/50 transition mt-8">
+                        <div>
+                            <i class="fas fa-project-diagram text-3xl text-zinc-600 mb-2"></i>
+                            <p class="text-xs text-zinc-400 uppercase tracking-widest">Arreglos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- El Arsenal -->
+            <h4 class="text-xl font-bold mb-10 text-center text-white tracking-widest uppercase">El Arsenal de Grabación</h4>
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-                <div class="text-center p-8 bg-zinc-900/50 rounded-2xl border border-zinc-800 hover:border-amber-500/50 transition">
+                <div class="text-center p-8 bg-zinc-900/50 rounded-2xl border border-zinc-800 hover:border-amber-500 transition card-glass">
                     <span class="text-4xl mb-4 block">🎸</span>
                     <h3 class="font-bold text-xs uppercase tracking-widest">Bajo Eléctrico</h3>
                 </div>
-                <div class="text-center p-8 bg-zinc-900/50 rounded-2xl border border-zinc-800 hover:border-amber-500/50 transition">
+                <div class="text-center p-8 bg-zinc-900/50 rounded-2xl border border-zinc-800 hover:border-amber-500 transition card-glass">
                     <span class="text-4xl mb-4 block">🎷</span>
                     <h3 class="font-bold text-xs uppercase tracking-widest">Saxo Alto</h3>
                 </div>
-                <div class="text-center p-8 bg-zinc-900/50 rounded-2xl border border-zinc-800 hover:border-amber-500/50 transition">
+                <div class="text-center p-8 bg-zinc-900/50 rounded-2xl border border-zinc-800 hover:border-amber-500 transition card-glass">
                     <span class="text-4xl mb-4 block">🎸</span>
                     <h3 class="font-bold text-xs uppercase tracking-widest">G. Española</h3>
                 </div>
-                <div class="text-center p-8 bg-zinc-900/50 rounded-2xl border border-zinc-800 hover:border-amber-500/50 transition">
+                <div class="text-center p-8 bg-zinc-900/50 rounded-2xl border border-zinc-800 hover:border-amber-500 transition card-glass">
                     <span class="text-4xl mb-4 block">🎶</span>
                     <h3 class="font-bold text-xs uppercase tracking-widest">F. Travesera</h3>
                 </div>
-                <div class="text-center p-8 bg-zinc-900/50 rounded-2xl border border-zinc-800 hover:border-amber-500/50 transition">
+                <div class="text-center p-8 bg-zinc-900/50 rounded-2xl border border-zinc-800 hover:border-amber-500 transition card-glass">
                     <span class="text-4xl mb-4 block">🏔️</span>
                     <h3 class="font-bold text-xs uppercase tracking-widest">Quena/Zampoña</h3>
                 </div>
-                <div class="text-center p-8 bg-zinc-900/50 rounded-2xl border border-zinc-800 hover:border-amber-500/50 transition">
+                <div class="text-center p-8 bg-zinc-900/50 rounded-2xl border border-zinc-800 hover:border-amber-500 transition card-glass">
                     <span class="text-4xl mb-4 block">🎹</span>
                     <h3 class="font-bold text-xs uppercase tracking-widest">Piano</h3>
                 </div>
@@ -136,10 +173,47 @@
         </div>
     </section>
 
+    <!-- 3. CLASES ONLINE -->
+    <section id="clases" class="py-24 bg-zinc-900/30">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <h2 class="text-sm uppercase tracking-[0.5em] text-amber-500 mb-4">Educación</h2>
+            <h3 class="text-4xl font-bold mb-8 text-white tracking-tighter">CLASES ONLINE</h3>
+            <p class="max-w-2xl mx-auto text-gray-400 mb-16 text-lg">Aprende a dominar tu instrumento, producción musical o film scoring desde cualquier parte del mundo. Clases 1 a 1 adaptadas a tu nivel, utilizando herramientas profesionales.</p>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-16 text-left">
+                <div class="card-glass p-8 rounded-3xl relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition text-6xl text-white"><i class="fas fa-desktop"></i></div>
+                    <i class="fas fa-sliders-h text-4xl text-amber-500 mb-6"></i>
+                    <h4 class="text-2xl font-bold text-white mb-3">Producción & Scoring</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Orquestación virtual, configuración de plantillas cinematográficas, mezcla MIDI y dominio absoluto de Cubase para tus bandas sonoras.</p>
+                </div>
+                
+                <div class="card-glass p-8 rounded-3xl relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition text-6xl text-white"><i class="fas fa-guitar"></i></div>
+                    <i class="fas fa-music text-4xl text-amber-500 mb-6"></i>
+                    <h4 class="text-2xl font-bold text-white mb-3">Instrumento</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Desarrollo de técnica, lenguaje musical, groove e improvisación en Bajo Eléctrico, Saxofón o Flauta Travesera.</p>
+                </div>
+
+                <div class="card-glass p-8 rounded-3xl relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition text-6xl text-white"><i class="fas fa-book"></i></div>
+                    <i class="fas fa-pen-nib text-4xl text-amber-500 mb-6"></i>
+                    <h4 class="text-2xl font-bold text-white mb-3">Armonía & Teoría</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Desde las bases teóricas hasta armonía moderna y arreglos avanzados para enriquecer tus propias composiciones.</p>
+                </div>
+            </div>
+
+            <a href="mailto:musicolatinobarrero@gmail.com?subject=Información sobre Clases Online" class="inline-block bg-amber-600 px-8 py-4 text-black font-black rounded-full hover:bg-amber-500 hover:scale-105 transition tracking-widest uppercase shadow-[0_0_20px_rgba(245,158,11,0.4)]">
+                Solicitar Información de Clases
+            </a>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
     <section id="contacto" class="py-32 bg-amber-600 text-black">
         <div class="max-w-4xl mx-auto px-6 text-center">
             <h2 class="text-5xl md:text-7xl font-black mb-8 tracking-tighter">¿TIENES UN PROYECTO?</h2>
-            <p class="text-lg mb-12 font-medium opacity-80 uppercase tracking-widest">Disponible para composición, arreglos y sesiones de grabación globales.</p>
+            <p class="text-lg mb-12 font-medium opacity-80 uppercase tracking-widest">Disponible para composición, arreglos, clases y sesiones de grabación globales.</p>
             
             <a href="mailto:musicolatinobarrero@gmail.com" class="text-2xl md:text-4xl font-black hover:underline break-all">
                 musicolatinobarrero@gmail.com
@@ -153,7 +227,8 @@
         </div>
     </section>
 
-    <footer class="py-12 text-center text-zinc-500 text-xs tracking-[0.3em] uppercase">
+    <!-- FOOTER -->
+    <footer class="py-12 bg-zinc-950 text-center text-zinc-500 text-xs tracking-[0.3em] uppercase border-t border-zinc-900">
         &copy; 2026 JORGE BARRERO MUSIC | El alma del instrumento en la orquesta.
     </footer>
 

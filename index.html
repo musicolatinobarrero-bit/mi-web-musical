@@ -322,5 +322,13 @@
         });
     </script>
 
+    <!-- FORZAR ABRIR SIEMPRE EN LA PARTE SUPERIOR DE LA PÁGINA -->
+<script>
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+</script>
+
 </body>
 </html>

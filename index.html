@@ -27,7 +27,7 @@
         }
     </style>
 </head>
-<body class="bg-zinc-950 text-gray-200 font-light">
+<body class="bg-zinc-950 text-gray-200 font-light relative">
 
     <!-- NAVEGACIÓN -->
     <nav class="fixed w-full z-50 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800">
@@ -91,11 +91,19 @@
                         <i class="fab fa-youtube text-3xl text-red-500 mr-4"></i>
                         <h3 class="text-2xl font-bold text-white">YouTube & Reels</h3>
                     </div>
-                    <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-zinc-800 mb-4" style="padding-bottom: 56.25%; height: 0;">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/PWfiyIJ3Xx4?si=Vhxd2zwlywhfaOYd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/SIvBaUo5Tos?si=XT7Vf9y8WmXXWa5K" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/Jx3i7suKgM4?si=Z-Jdm3I4nE2O2do0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    
+                    <div class="space-y-4 mb-4">
+                        <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-zinc-800" style="padding-bottom: 56.25%; height: 0;">
+                            <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/PWfiyIJ3Xx4?si=Vhxd2zwlywhfaOYd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-zinc-800" style="padding-bottom: 56.25%; height: 0;">
+                            <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/SIvBaUo5Tos?si=XT7Vf9y8WmXXWa5K" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-zinc-800" style="padding-bottom: 56.25%; height: 0;">
+                            <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/Jx3i7suKgM4?si=Z-Jdm3I4nE2O2do0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
                     </div>
+
                     <p class="text-zinc-500 text-sm tracking-widest uppercase">Destacado: Cinematic Bass Funk (Cubase 15)</p>
                     <a href="https://www.youtube.com/@JorgeBajista" target="_blank" class="mt-4 inline-block text-amber-500 font-bold uppercase text-xs tracking-widest hover:text-white transition">Ver canal completo →</a>
                 </div>
@@ -116,7 +124,7 @@
 
             <!-- BOTÓN DE SOLICITUD DE FILM SCORING -->
             <div class="text-center mt-12">
-                <a href="mailto:musicolatinobarrero@gmail.com?subject=Consulta%20sobre%20Film%20Scoring%20%2F%20M%C3%BAsica%20para%20Videos&body=Hola%20Jorge%2C%20tengo%20un%20proyecto%20audiovisual%2Fvideo%20y%20me%20gustar%C3%ADa%20consultar%20presupuestos%20y%20disponibilidad%20para%20la%20composici%C3%B3n%20o%20arreglos%20orquestales..." class="inline-block bg-amber-600 px-8 py-4 text-black font-black rounded-full hover:bg-amber-500 hover:scale-105 transition tracking-widest uppercase shadow-[0_0_20px_rgba(245,158,11,0.4)]">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=musicolatinobarrero@gmail.com&su=Consulta%20sobre%20Film%20Scoring%20y%20Musica%20para%20Videos&body=Hola%20Jorge%2C%20tengo%20un%20proyecto%20audiovisual%20o%20video%20y%20me%20gustaria%20consultar%20presupuestos%20y%20disponibilidad%20para%20la%20composicion%20o%20arreglos%20orquestales..." target="_blank" class="inline-block bg-amber-600 px-8 py-4 text-black font-black rounded-full hover:bg-amber-500 hover:scale-105 transition tracking-widest uppercase shadow-[0_0_20px_rgba(245,158,11,0.4)]">
                     <i class="fas fa-film mr-2"></i> Solicitar Presupuesto de Film Scoring
                 </a>
             </div>
@@ -217,7 +225,7 @@
 
             <!-- BOTÓN DE SOLICITUD DE GRABACIÓN -->
             <div class="text-center mt-12">
-                <a href="mailto:musicolatinobarrero@gmail.com?subject=Solicitud%20de%20Grabaci%C3%B3n%20%2F%20M%C3%BAsico%20de%20Sesi%C3%B3n&body=Hola%20Jorge%2C%20estoy%20interesado%20en%20contratar%20tus%20servicios%20de%20grabaci%C3%B3n%20y%20arreglos%20como%20instrumentista%20para%20mi%20proyecto%20musical..." class="inline-block bg-amber-600 px-8 py-4 text-black font-black rounded-full hover:bg-amber-500 hover:scale-105 transition tracking-widest uppercase shadow-[0_0_20px_rgba(245,158,11,0.4)]">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=musicolatinobarrero@gmail.com&su=Solicitud%20de%20Grabacion%20y%20Sesion&body=Hola%20Jorge%2C%20estoy%20interesado%20en%20contratar%20tus%20servicios%20de%20grabacion%20y%20arreglos%20como%20instrumentista%20para%20mi%20proyecto%20musical..." target="_blank" class="inline-block bg-amber-600 px-8 py-4 text-black font-black rounded-full hover:bg-amber-500 hover:scale-105 transition tracking-widest uppercase shadow-[0_0_20px_rgba(245,158,11,0.4)]">
                     <i class="fas fa-compact-disc mr-2"></i> Solicitar Grabación de Sesión
                 </a>
             </div>
@@ -255,7 +263,7 @@
             </div>
 
             <!-- BOTÓN DE SOLICITUD DE CLASES ONLINE -->
-            <a href="mailto:musicolatinobarrero@gmail.com?subject=Informaci%C3%B3n%20sobre%20Clases%20Online&body=Hola%20Jorge%2C%20me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20las%20clases%20online%20%28temario%2C%20horarios%20y%20tarifas%29..." class="inline-block bg-amber-600 px-8 py-4 text-black font-black rounded-full hover:bg-amber-500 hover:scale-105 transition tracking-widest uppercase shadow-[0_0_20px_rgba(245,158,11,0.4)]">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=musicolatinobarrero@gmail.com&su=Informacion%20sobre%20Clases%20Online&body=Hola%20Jorge%2C%20me%20gustaria%20recibir%20mas%20informacion%20sobre%20las%20clases%20online%20%28temario%2C%20horarios%20y%20tarifas%29..." target="_blank" class="inline-block bg-amber-600 px-8 py-4 text-black font-black rounded-full hover:bg-amber-500 hover:scale-105 transition tracking-widest uppercase shadow-[0_0_20px_rgba(245,158,11,0.4)]">
                 <i class="fas fa-graduation-cap mr-2"></i> Solicitar Información de Clases
             </a>
         </div>
@@ -263,18 +271,24 @@
 
     <!-- CONTACTO GENERAL -->
     <section id="contacto" class="py-32 bg-amber-600 text-black">
-        <div class="max-w-4xl mx-auto px-6 text-center">
+        <div class="max-w-5xl mx-auto px-6 text-center">
             <h2 class="text-5xl md:text-7xl font-black mb-8 tracking-tighter">¿TIENES UN PROYECTO?</h2>
             <p class="text-lg mb-12 font-medium opacity-80 uppercase tracking-widest">Disponible para composición, arreglos, clases y sesiones de grabación globales.</p>
             
-            <a href="mailto:musicolatinobarrero@gmail.com" class="text-2xl md:text-4xl font-black hover:underline break-all">
-                musicolatinobarrero@gmail.com
-            </a>
+            <div class="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-10 text-xl md:text-3xl font-black">
+                <a href="mailto:musicolatinobarrero@gmail.com" class="hover:underline break-all flex items-center justify-center gap-3">
+                    <i class="fas fa-envelope text-2xl md:text-3xl"></i> musicolatinobarrero@gmail.com
+                </a>
+                <a href="https://wa.me/34633314326?text=Hola%20Jorge%2C%20vi%20tu%20p%C3%A1gina%20web%20y%20me%20gustar%C3%ADa%20hacerte%20una%20consulta." target="_blank" class="hover:underline flex items-center justify-center gap-3 bg-black/10 px-6 py-2 rounded-full border border-black/20 hover:bg-black/20 transition">
+                    <i class="fab fa-whatsapp text-3xl md:text-4xl text-zinc-900"></i> +34 633 31 43 26
+                </a>
+            </div>
 
             <div class="flex justify-center space-x-10 mt-16">
                 <a href="https://www.instagram.com/jorgebassplayer/" target="_blank" class="text-3xl hover:scale-110 transition"><i class="fab fa-instagram"></i></a>
                 <a href="https://www.youtube.com/@JorgeBajista" target="_blank" class="text-3xl hover:scale-110 transition"><i class="fab fa-youtube"></i></a>
                 <a href="https://www.tiktok.com/@jorge.barrero6" target="_blank" class="text-3xl hover:scale-110 transition"><i class="fab fa-tiktok"></i></a>
+                <a href="https://wa.me/34633314326?text=Hola%20Jorge%2C%20vi%20tu%20p%C3%A1gina%20web%20y%20me%20gustar%C3%ADa%20hacerte%20una%20consulta." target="_blank" class="text-3xl hover:scale-110 transition" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
             </div>
         </div>
     </section>

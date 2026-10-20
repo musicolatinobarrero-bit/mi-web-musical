@@ -33,6 +33,14 @@
             background-position: center;
         }
 
+        /* AJUSTE AUTOMÁTICO PARA MÓVILES (Optimización de encuadre vertical) */
+        @media (max-width: 768px) {
+            .hero-gradient, .portfolio-gradient, .grabaciones-gradient {
+                background-position: center center;
+                background-attachment: scroll; /* Mejora rendimiento en móviles */
+            }
+        }
+
         .card-glass {
             background: rgba(24, 24, 27, 0.7);
             backdrop-filter: blur(10px);
@@ -49,7 +57,7 @@
 <body class="bg-zinc-950 text-gray-200 font-light relative">
 
     <!-- NAVEGACIÓN -->
-    <nav class="fixed w-full z-50 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800">
+    <nav class="fixed w-full z-50 bg-zinc-950/95 backdrop-blur-md border-b border-zinc-800">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <span class="text-xl font-bold tracking-tighter text-white">JORGE BARRERO</span>
             
@@ -69,11 +77,11 @@
         </div>
 
         <!-- Desplegable Móvil -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-zinc-950/95 border-b border-zinc-800 px-6 py-6 flex-col space-y-4 text-sm uppercase tracking-widest">
-            <a href="#perfil" class="mobile-link hover:text-amber-500 transition block py-2 border-b border-zinc-800/50">Perfil</a>
-            <a href="#musica-videos" class="mobile-link hover:text-amber-500 transition block py-2 border-b border-zinc-800/50">Música para Videos</a>
-            <a href="#grabaciones" class="mobile-link hover:text-amber-500 transition block py-2 border-b border-zinc-800/50">Grabaciones</a>
-            <a href="#clases" class="mobile-link hover:text-amber-500 transition block py-2 border-b border-zinc-800/50">Clases Online</a>
+        <div id="mobile-menu" class="hidden lg:hidden bg-zinc-950 border-b border-zinc-800 px-6 py-6 flex-col space-y-4 text-sm uppercase tracking-widest shadow-2xl">
+            <a href="#perfil" class="mobile-link hover:text-amber-500 transition block py-2 border-b border-zinc-900">Perfil</a>
+            <a href="#musica-videos" class="mobile-link hover:text-amber-500 transition block py-2 border-b border-zinc-900">Música para Videos</a>
+            <a href="#grabaciones" class="mobile-link hover:text-amber-500 transition block py-2 border-b border-zinc-900">Grabaciones</a>
+            <a href="#clases" class="mobile-link hover:text-amber-500 transition block py-2 border-b border-zinc-900">Clases Online</a>
             <a href="#contacto" class="mobile-link bg-amber-600 px-4 py-3 text-black font-bold rounded text-center block mt-2">Contacto</a>
         </div>
     </nav>
@@ -289,4 +297,77 @@
     <section id="contacto" class="py-32 bg-amber-600 text-black">
         <div class="max-w-5xl mx-auto px-6 text-center">
             <h2 class="text-5xl md:text-7xl font-black mb-8 tracking-tighter">¿TIENES UN PROYECTO?</h2>
-            <p class="text-lg mb-12 font-medium opacity-80 uppercase tracking-widest">
+            <p class="text-lg mb-12 font-medium opacity-80 uppercase tracking-widest">Disponible para composición, arreglos, clases y sesiones de grabación globales.</p>
+            
+            <div class="flex flex-col md:flex-row justify-center items-center gap-6 text-xl md:text-2xl font-black">
+                <!-- Email principal -->
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=musicolatinobarrero@gmail.com" target="_blank" class="hover:underline flex items-center justify-center gap-3">
+                    <i class="fas fa-envelope"></i> musicolatinobarrero@gmail.com
+                </a>
+                
+                <!-- Botón WhatsApp sin mostrar el número escrito -->
+                <a href="https://wa.me/34633314326?text=Hola%20Jorge%2C%20vi%20tu%20p%C3%A1gina%20web%20y%20me%20gustar%C3%ADa%20hacerte%20una%20consulta." target="_blank" class="flex items-center justify-center gap-3 bg-black text-white px-8 py-3 rounded-full hover:bg-zinc-800 transition shadow-lg">
+                    <i class="fab fa-whatsapp text-2xl text-green-400"></i> Chatear por WhatsApp
+                </a>
+            </div>
+
+            <div class="flex justify-center space-x-10 mt-16">
+                <a href="https://www.instagram.com/jorgebassplayer/" target="_blank" class="text-3xl hover:scale-110 transition"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/@JorgeBajista" target="_blank" class="text-3xl hover:scale-110 transition"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.tiktok.com/@jorge.barrero6" target="_blank" class="text-3xl hover:scale-110 transition"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-12 bg-zinc-950 text-center text-zinc-500 text-xs tracking-[0.3em] uppercase border-t border-zinc-900">
+        &copy; 2026 JORGE BARRERO MUSIC | El alma del instrumento en la orquesta.
+    </footer>
+
+    <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+    <a href="https://wa.me/34633314326?text=Hola%20Jorge%2C%20vi%20tu%20p%C3%A1gina%20web%20y%20me%20gustar%C3%ADa%20hacerte%20una%20consulta." 
+       target="_blank" 
+       title="Contactar por WhatsApp"
+       class="fixed bottom-6 right-6 z-50 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-2xl hover:bg-green-600 hover:scale-110 transition duration-300">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    
+    <!-- SCRIPT PARA EL MENÚ MÓVIL Y SCROLL -->
+    <script>
+        // Forzar apertura siempre arriba
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        window.scrollTo(0, 0);
+
+        // Menú hamburguesa móvil
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+            
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            } else {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            }
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            });
+        });
+    </script>
+
+</body>
+</html>
